@@ -37274,35 +37274,44 @@ function generateQRPageCallback(hash) {
 		getById("gencontent2").style.display = "block";
 		getById("gencontent2").className = "container-inner";
 
-		getById("gencontent2").innerHTML =
-			'<br /><div id="qrcode" style="background-color:white;display:inline-block;color:black;max-width:380px;padding:35px 40px 40px 40px;">\
-			<h2 style="margin:0 0 8px 0;color:black"  data-translate="invite-link">Guest Invite Link:</h2>\
-			<a class="task grabLinks" title="Click to copy guest invite link to clipboard" onclick="copyFunction(this,event)"   \
-			style="word-break: break-all;cursor:copy;background-color:#CFC;border: 2px solid black;width:300px;padding:8px;margin:0px;color:#000;"  href="' +
-			sendstr +
-			'" >' +
-			sendstr +
-			' <i class="las la-paperclip" style="cursor:pointer"></i></a><br /><br /></div>\
-			<br /><br />and don\'t forget the<h2 style="color:black">OBS Browser Source Link:</h2><a class="task grabLinks" title="Click to copy or just Drag the link directly into OBS" data-drag="1" onclick="copyFunction(this,event)"  style="word-break: break-all;margin:0px;cursor:grab;background-color:#FCC;width:380px;padding:10px;border:2px solid black;margin:5px;color:#000;" href="' +
-			viewstr +
-			'" >' +
-			viewstr +
-			' <i class="las la-paperclip" style="cursor:pointer"></i></a> \
-			';
+		getById("gencontent2").innerHTML = `<br />
+			<div id="qrcode" style="background-color:white;display:inline-block;color:black;max-width:380px;padding:35px 40px 40px 40px;">
+				<h2 style="margin:0 0 8px 0;color:black">
+					<a target="_blank" href="${sendstr}" title="Click to open" data-translate="guest-invite-link">Guest Invite Link</a>:
+				</h2>
+					<a class="task grabLinks" title="Click to copy guest invite link to clipboard" onclick="copyFunction(this,event)"
+						style="word-break:break-all;cursor:copy;background-color:#CFC;border:2px solid black;width:300px;padding:8px;margin:0px;color:#000;"
+						href="${sendstr}">${sendstr}<i class="las la-paperclip" style="cursor:pointer"></i>
+					</a><br /><br />
+			</div>
+			<br /><br />
+			<hr style="max-width:380px;margin:0 auto;" />
+			<p style="margin-top:2rem;margin-bottom:1rem;">and don\'t forget the</p>
+			<div id="qrcode2" style="background-color:white;display:inline-block;color:black;max-width:380px;padding:35px 40px 40px 40px;">
+				<h2 style="color:black">
+					<a target="_blank" href="${viewstr}" title="Click to open" data-translate="obs-browser-source-link">OBS Browser Source Link</a>:
+				</h2>
+				<a class="task grabLinks" title="Click to copy or just Drag the link directly into OBS" data-drag="1" onclick="copyFunction(this,event)"
+					style="word-break:break-all;cursor:grab;background-color:#FCC;width:300px;padding:8px;margin:0px;border:2px solid black;color:#000;"
+					href="${viewstr}">${viewstr}<i class="las la-paperclip" style="cursor:pointer"></i>
+				</a><br /><br />
+			</div>`;
 
 		if (hoststr) {
 			getById("gencontent2").innerHTML += '<br /><br /><h2 style="color:black">Host Chat Link:</h2><a class="task" title="Click to copy"  onclick="copyFunction(this,event)"  style="font-weight: bold;display: inline-flex;word-break: break-all;margin:0px;cursor:grab;background-color:#cce1ff;width:380px;padding:10px;border:2px solid black;margin:5px;color:#000;" href="' + hoststr + '" >' + hoststr + ' <i class="las la-paperclip" style="cursor:pointer"></i></a>';
 		}
 
-		getById("gencontent2").innerHTML +=
-			'<br /><br />\
-			<span data-translate="please-note-invite-ingestion-link">\
-				<li>This invite link and OBS ingestion link are reusable.</li>\
-				<li>Only one person may use a specific invite at a time.</li>\
-				<li>The stream ID can be changed manually to something else; keep it unique and alphanumeric.</li>\
-				<li>Nothing is stored server-side; links do not expire, nor is there anything to delete.</li>\
-			</span><br /><br />\
-			<button onclick="resetGen();" style="font-size:1.2em;paddding:5px;"><i class="las la-redo-alt"></i> Create Another Invite Link</button>';
+		getById("gencontent2").innerHTML += `<br /><br />
+			<span data-translate="please-note-invite-ingestion-link">
+				<li data-translate="create-reusable-invite-tip-1">This invite link and OBS ingestion link are reusable.</li>
+				<li data-translate="create-reusable-invite-tip-2">Only one person may use a specific invite at a time.</li>
+				<li data-translate="create-reusable-invite-tip-3">The stream ID can be changed manually to something else; keep it unique and alphanumeric.</li>
+				<li data-translate="create-reusable-invite-tip-4">Nothing is stored server-side; links do not expire, nor is there anything to delete.</li>
+			</span>
+			<br /><br />
+			<button onclick="resetGen();" class="gobutton" style="font-size:1.2em;padding:20px;">
+				<i class="las la-redo-alt"></i>&nbsp; <span data-translate="create-another-invite-link">Create Another Invite Link</span>
+			</button>`;
 
 		var qrcode = new QRCode(getById("qrcode"), {
 			width: 300,
@@ -37320,6 +37329,24 @@ function generateQRPageCallback(hash) {
 				getById("qrcode").getElementsByTagName("img")[0].style.margin = "0 auto";
 			}
 		}, 100); // i really hate the title overlay that the qrcode function makes
+
+		let qrcode2 = new QRCode(getById("qrcode2"),{
+			width: 300,
+			height: 300,
+			colorDark: "#000000",
+			colorLight: "#FFFFFF",
+			useSVG: false
+		});
+		qrcode2.makeCode(viewstr);
+		getById("qrcode2").title = "";
+		setTimeout(function () {
+			getById("qrcode2").title = "";
+			if (getById("qrcode2").getElementsByTagName("img").length) {
+				getById("qrcode2").getElementsByTagName("img")[0].style.cursor = "none";
+				getById("qrcode2").getElementsByTagName("img")[0].style.margin = "0 auto";
+			}
+		}, 100); // i really hate the title overlay that the qrcode function makes
+
 	} catch (e) {
 		errorlog(e);
 	}
