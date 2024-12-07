@@ -8250,6 +8250,8 @@ function showControl(e) {
 
 async function changeLg(lang) {
 	log("changeLg: " + lang);
+	let store_lang = getStorage("lang")
+	if(store_lang != lang) setStorage("lang", lang)
 	var retry = false;
 	if (lang == "auto") {
 		const navlang = navigator.language || navigator.userLanguage || "";
@@ -37303,14 +37305,13 @@ function generateQRPageCallback(hash) {
 
 		getById("gencontent2").innerHTML += `<br /><br />
 			<span data-translate="please-note-invite-ingestion-link">
-				<li data-translate="create-reusable-invite-tip-1">This invite link and OBS ingestion link are reusable.</li>
-				<li data-translate="create-reusable-invite-tip-2">Only one person may use a specific invite at a time.</li>
-				<li data-translate="create-reusable-invite-tip-3">The stream ID can be changed manually to something else; keep it unique and alphanumeric.</li>
-				<li data-translate="create-reusable-invite-tip-4">Nothing is stored server-side; links do not expire, nor is there anything to delete.</li>
+				<li>This invite link and OBS ingestion link are reusable.</li>
+				<li>Only one person may use a specific invite at a time.</li>
+				<li>The stream ID can be changed manually to something else; keep it unique and alphanumeric.</li>
+				<li>Nothing is stored server-side; links do not expire, nor is there anything to delete.</li>
 			</span>
-			<br /><br />
-			<button onclick="resetGen();" class="gobutton" style="font-size:1.2em;padding:20px;">
-				<i class="las la-redo-alt"></i>&nbsp; <span data-translate="create-another-invite-link">Create Another Invite Link</span>
+			<button onclick="resetGen();" class="gobutton gowebcam" style="font-size:1.2em;padding:20px;">
+				<i class="las la-redo-alt" style="color:black"></i>&nbsp; <span data-translate="create-another-invite-link">Create Another Invite Link</span>
 			</button>`;
 
 		var qrcode = new QRCode(getById("qrcode"), {

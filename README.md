@@ -1,4 +1,24 @@
 
+[updated]
+
+1. Use `"localStorage"` to memorize multi-language switching, without url parameter control. (2024-12-7)
+2. Beautify the `"Create Reusable Invite"` page (2024-12-6)
+    1. Open new window on clicking link. 
+    2. Create QR code for obs viewer link. 
+    3. Unified the UI elements. 
+    4. Translate more.
+3. Add an SSL certificate for `https` via `"mkcert"` (2024-12-6)
+
+<br/>
+<br/>
+
+[fixed]
+
+1. The newly added DOM cannot be translated. (2024-12-7)
+
+<br/>
+<hr />
+
 ### ⚠ Notice! We've rebranded from OBS.Ninja to VDO.Ninja - all else is staying the same ✨
 
 <img src="https://user-images.githubusercontent.com/2575698/124821455-bbfec580-df3c-11eb-9641-3d036cdd6c41.png" data-canonical-src="https://user-images.githubusercontent.com/2575698/124821455-bbfec580-df3c-11eb-9641-3d036cdd6c41.png" width="200"  />
