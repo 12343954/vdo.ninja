@@ -5732,7 +5732,21 @@ button.toggleSettings,
 /**
  * Below lsits the classes and font styles for the font-awesome icons.
  */
-
+.las, .lab {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	line-height: 1; }
+@font-face {
+	font-family: 'Line Awesome Brands';
+	font-style: normal;
+	font-weight: normal;
+	font-display: auto;
+	src: url("lineawesome/fonts/la-brands-400.eot");
+	src: url("lineawesome/fonts/la-brands-400.eot?#iefix") format("embedded-opentype"), url("lineawesome/fonts/la-brands-400.woff2") format("woff2"), url("lineawesome/fonts/la-brands-400.woff") format("woff"), url("lineawesome/fonts/la-brands-400.ttf") format("truetype"), url("lineawesome/fonts/la-brands-400.svg#lineawesome") format("svg"); }
 @font-face {
 	font-family: 'Line Awesome Free';
 	font-style: normal;
@@ -5741,14 +5755,9 @@ button.toggleSettings,
 	src: url("lineawesome/fonts/la-solid-900.eot");
 	src: url("lineawesome/fonts/la-solid-900.eot?#iefix") format("embedded-opentype"), url("lineawesome/fonts/la-solid-900.woff2") format("woff2"), url("lineawesome/fonts/la-solid-900.woff") format("woff"), url("lineawesome/fonts/la-solid-900.ttf") format("truetype"), url("lineawesome/fonts/la-solid-900.svg#lineawesome") format("svg"); 
 }
-.las {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-style: normal;
-	font-variant: normal;
-	text-rendering: auto;
-	line-height: 1; }
+.lab {
+	font-family: 'Line Awesome Brands'; 
+	font-weight: 900; }
 .las {
 	font-family: 'Line Awesome Free';
 	font-weight: 900; }
@@ -5982,3 +5991,9 @@ button.toggleSettings,
 	content: "\f10b"; }
 .la-podcast:before {
 	content: "\f2ce"; }
+.la-youtube:before {
+	content: "\f167"; }
+.la-discord:before {
+	content: "\f392"; }
+.la-reddit-alien:before {
+	content: "\f281"; }

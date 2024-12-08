@@ -4,9 +4,10 @@
 3. The official site is [[https://vdo.nijia]](https://vdo.nijia).
 
 [2024-12-8]
-1. (add) Memory expand/close status of all function cards.
-2. (add) Make `drop Button` always float and display.
+1. (add) Memory `"expand/close"` status of all function cards.
+2. (add) Make `"Drop Button"` always float and display.
 3. (fix) The language div cannot be closed automatically when clicking outside. 
+4. (fix) Missing icons `".lab"` —— Line Awesome Brands Font. 
 
 [2024-12-7]
 1. (add) Use `"localStorage"` to memorize multi-language switching, without url parameter control. 
