@@ -1,5 +1,7 @@
-
-
+[ps]
+1. Preview for lack of functionality: [[Demo]](https://htmlpreview.github.io/?https://github.com/12343954/vdo.ninja/blob/master/index.html).
+2. Host it locally for full functionality, the tutorial is here: [[https://youtu.be/_WTYXUqZJQs]](https://www.youtube.com/watch?v=_WTYXUqZJQs).
+3. The official site is [[https://vdo.nijia]](https://vdo.nijia).
 
 [2024-12-8]
 1. (add) Memory expand/close status of all function cards.
