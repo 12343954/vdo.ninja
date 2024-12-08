@@ -857,9 +857,7 @@
 					</div>
 				</div>
 			</div>
-			
-			<div id="dropButton" onclick="dropDownButtonAction()" title="More Options" aria-hidden="true"><i class="las la-chevron-down" ></i></div>
-			
+						
 			<div id="container-5" class="column columnfade pointer rounded card hidden" style=" overflow-y: auto;">
 				<h2><span data-translate="share-local-video-file">Stream Media File</span></h2>
 				<div class="container-inner">
@@ -1037,6 +1035,8 @@
 				</div>
 			</div>
 			
+			<div id="dropButton" onclick="dropDownButtonAction()" title="More Options" aria-hidden="true"><i class="las la-chevron-down" ></i></div>
+
 			<p></p>
 			
 			<div id="unexpectedPushLink" class='hidden' style="width:100%;color: white;display:block;font-size:130%;">
@@ -2707,7 +2707,7 @@
 			</div>
 		</div>
 		<div id="messagePopup" class="popup-message"></div>
-		<div id="languages" style="right: 20px; bottom: 30px; display:none;" class="popup-message">
+		<div id="languages" style="position:fixed;right:20px;bottom:30px;display:none;" class="popup-message">
 			<b data-translate='available-languages'>Available Languages:</b>
 			<br />
 			<ul id="languagesList" style="list-style-type: none; margin: 0;">

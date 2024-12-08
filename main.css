@@ -2383,10 +2383,20 @@ label {
 	background-color: #5555;
 	border-radius: 30px;
 	cursor:pointer;
-	color: #636363;
+	color: #b6b6b6;
 	padding: 3px;
 	width: 100px;
+	position: fixed;
+    right: calc(50% - 50px);
+    top: 1%;
 }
+
+@media screen and (max-width: 700px) {
+	#dropButton {
+		right: 1% !important;
+	}
+}
+
 .fullcolumn {
 	float: left;
 	display: inline-block;
@@ -2406,7 +2416,7 @@ label {
 	min-width: 300px;
 	width: 20%;
 	padding: 25px;
-	height: 200px;
+	min-height: 200px;
 	text-align: center;
 	font-size: 100%;
 	transition: box-shadow 0.1s ease-in-out;
@@ -5944,6 +5954,8 @@ button.toggleSettings,
 	content: "\f00c"; }
 .la-exclamation:before {
 	content: "\f12a"; }
+.la-chevron-up:before {
+	content: "\f077"; }
 .la-chevron-down:before {
 	content: "\f078"; }
 .la-music:before {

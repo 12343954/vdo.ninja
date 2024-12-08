@@ -9,6 +9,13 @@
 /*jshint esversion: 6 */
 async function main() {
 	// main asyncronous thread; mostly initializes the user settings.
+	if (getStorage('toggle')) {
+		var ele = document.querySelector("#dropButton .las");
+		ele.className = ele.className.replace('la-chevron-down', 'la-chevron-up')
+		document.querySelectorAll("div.column.card.hidden").forEach(k => {
+			k.className = k.className.replace('hidden', 'show')
+		});
+	}
 
 	var delayedStartupFuncs = [];
 	// translation stuff start ////
@@ -7765,6 +7772,12 @@ async function main() {
 	);
 
 	document.addEventListener("click", function (event) {
+		//hide language div when click outside
+		if (event.target.closest('div') !== null) {
+			const lang = getById('languages');
+			lang.style.display != 'none' && (lang.style.display = 'none');
+		}
+
 		if (session.firstPlayTriggered == false) {
 			playAllVideos();
 			session.firstPlayTriggered = true;
