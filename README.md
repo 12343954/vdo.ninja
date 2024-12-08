@@ -1,21 +1,24 @@
 
-[updated]
 
-1. Use `"localStorage"` to memorize multi-language switching, without url parameter control. (2024-12-7)
-2. Beautify the `"Create Reusable Invite"` page (2024-12-6)
+
+[2024-12-8]
+1. (add) Memory expand/close status of all function cards.
+2. (add) Make `drop Button` always float and display.
+3. (fix) The language div cannot be closed automatically when clicking outside. 
+
+[2024-12-7]
+1. (add) Use `"localStorage"` to memorize multi-language switching, without url parameter control. 
+2. (fix) The newly added DOM cannot be translated.
+
+[2024-12-6]
+1. (add) Beautify the `"Create Reusable Invite"` page 
     1. Open new window on clicking link. 
     2. Create QR code for obs viewer link. 
-    3. Unified the UI elements. 
+    3. Unified the UI for buttons. 
     4. Translate more.
-3. Add an SSL certificate for `https` via `"mkcert"` (2024-12-6)
+2. (add) An SSL certificate for `https` via `"mkcert"`
 
 <br/>
-<br/>
-
-[fixed]
-
-1. The newly added DOM cannot be translated. (2024-12-7)
-
 <br/>
 <hr />
 
