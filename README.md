@@ -3,8 +3,11 @@
 2. Host it locally for full functionality, the tutorial is here: [[https://youtu.be/_WTYXUqZJQs]](https://www.youtube.com/watch?v=_WTYXUqZJQs).
 3. The official site is [[https://vdo.nijia]](https://vdo.nijia).
 
+[2024-12-11]
+1. (add) `"collapse/expend"` animation effect for the main menu of the `index.html`
+
 [2024-12-8]
-1. (add) Memory `"expand/close"` status of all function cards.
+1. (add) Memory `"collapse/expend"` status of all function cards.
 2. (add) Make `"Drop Button"` always float and display.
 3. (fix) The language div cannot be closed automatically when clicking outside. 
 4. (fix) Missing icons `".lab"` —— Line Awesome Brands Font. 

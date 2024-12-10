@@ -31711,15 +31711,17 @@ function dropDownButtonAction(ele) {
 		setStorage('toggle', true);
 		//show hidden items
 		ele.className = ele.className.replace('la-chevron-down', 'la-chevron-up')
-		document.querySelectorAll("div.column.card.hidden").forEach(k => {
-			k.className = k.className.replace('hidden', 'show')
+		document.querySelectorAll("#mainmenu > .hide").forEach(k => {
+			k.classList.remove('hide')
+			k.classList.add('column', 'show')
 		});
 	}else{
 		setStorage('toggle', false);
 		//hide
 		ele.className = ele.className.replace('la-chevron-up', 'la-chevron-down')
-		document.querySelectorAll("div.column.card.show").forEach(k => {
-			k.className = k.className.replace('show', 'hidden')
+		document.querySelectorAll("#mainmenu > .show").forEach(k => {
+			k.classList.remove('column', 'show')
+			k.classList.add('hide')
 		});
 	}
 }

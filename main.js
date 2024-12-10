@@ -12,8 +12,9 @@ async function main() {
 	if (getStorage('toggle')) {
 		var ele = document.querySelector("#dropButton .las");
 		ele.className = ele.className.replace('la-chevron-down', 'la-chevron-up')
-		document.querySelectorAll("div.column.card.hidden").forEach(k => {
-			k.className = k.className.replace('hidden', 'show')
+		document.querySelectorAll("#mainmenu > .hide").forEach(k => {
+			k.classList.remove('hide');
+			k.classList.add('column', 'show');
 		});
 	}
 
@@ -4677,7 +4678,10 @@ async function main() {
 		if (urlParams.get("fadein") || 0) {
 			try {
 				var fadeinspeed = parseInt(urlParams.get("fadein") || 0) / 1000.0;
-				fadeinspeed += "s";
+				if(isNaN(fadeinspeed))
+					fadeinspeed = "100ms";
+				else
+					fadeinspeed += "s";
 				document.querySelector(":root").style.setProperty("--fadein-speed", fadeinspeed);
 			} catch (e) {
 				errorlog("variable css failed");

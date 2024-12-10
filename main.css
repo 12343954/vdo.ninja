@@ -79,7 +79,8 @@
 	--regular-margin: 10px;
 	--director-margin: 15px 20px 0 0;
 	--fit-style: contain;
-	--fadein-speed: 0;
+	--fadein-speed: 100ms;
+	--fadein-delay: 0ms;
 	--video-margin: 0px;
 	--video-rounded: 0px;
 	--video-border: 0px;
@@ -1652,11 +1653,11 @@ body.darktheme{
     left: 0;
     z-index: 500;
     top: 0;
-	animation: fadeIn 0.1s;
 	-webkit-animation: fadeIn  0.3s;
 	-moz-animation: fadeIn  0.3s;
 	-o-animation: fadeIn  0.3s;
 	-ms-animation: fadeIn  0.3s;
+	animation: fadeIn 0.3s;
 	animation-iteration-count: 1;
 }
 div[data-action-type='toggle-group'] {
@@ -3343,6 +3344,20 @@ video::-webkit-media-controls-panel {
 }
 .grabLinks a:link {
 	color: black !important;
+}
+
+.hide {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	transition: height .4s, width .2s !important;
+}
+
+.show {
+	opacity: 1;
+	height: 200px;
+	width: 20%;
+	transition: height .4s, width .2s !important;
 }
 
 .hidden {
@@ -5652,8 +5667,8 @@ button.toggleSettings,
 @keyframes inlightbox {
 	50% {
 		width: 100%;
-		left: 0;
 		height: 200px;
+		left: 0;
 	}
 
 	100% {
@@ -5667,12 +5682,14 @@ button.toggleSettings,
 
 /* Fade-in animation */
 .fadein {
-	animation: fadeIn var(--fadein-speed);
 	-webkit-animation: fadeIn var(--fadein-speed);
 	-moz-animation: fadeIn var(--fadein-speed);
 	-o-animation: fadeIn var(--fadein-speed);
 	-ms-animation: fadeIn var(--fadein-speed);
+	animation: fadeIn var(--fadein-speed);
+	animation-delay: var(--fadein-delay);
 	animation-iteration-count: 1;
+	transition: width 1s, height 1s, opacity 1s;
 }
 @keyframes fadeIn {
 	0% {opacity:0;}
@@ -5698,6 +5715,10 @@ button.toggleSettings,
 
 /* Fade-out animation */
 .fadeout {
+	-webkit-animation: fadeout 1s;
+	-moz-animation: fadeout 1s;
+	-o-animation: fadeout 1s;
+	-ms-animation: fadeout 1s;
 	animation: fadeout 1s;
 	opacity: 0!important;
 }
@@ -5706,7 +5727,7 @@ button.toggleSettings,
 }
 @keyframes fadeout {
 	0% {
-		opacity: 1
+		opacity: 1;
 	}
 	100% {
 		opacity: 0
