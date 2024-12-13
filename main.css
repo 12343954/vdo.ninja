@@ -79,7 +79,7 @@
 	--regular-margin: 10px;
 	--director-margin: 15px 20px 0 0;
 	--fit-style: contain;
-	--fadein-speed: 100ms;
+	--fadein-speed: 400ms;
 	--fadein-delay: 0ms;
 	--video-margin: 0px;
 	--video-rounded: 0px;
@@ -3347,6 +3347,7 @@ video::-webkit-media-controls-panel {
 }
 
 .hide {
+	display: none;
 	width: 0;
 	height: 0;
 	opacity: 0;
@@ -5689,7 +5690,7 @@ button.toggleSettings,
 	animation: fadeIn var(--fadein-speed);
 	animation-delay: var(--fadein-delay);
 	animation-iteration-count: 1;
-	transition: width 1s, height 1s, opacity 1s;
+	/* transition: width 1s, height 1s, opacity 1s; */
 }
 @keyframes fadeIn {
 	0% {opacity:0;}
@@ -5720,7 +5721,7 @@ button.toggleSettings,
 	-o-animation: fadeout 1s;
 	-ms-animation: fadeout 1s;
 	animation: fadeout 1s;
-	opacity: 0!important;
+	opacity: 0 !important;
 }
 .partialFadeout{
 	opacity: 0.2 !important;
@@ -5730,7 +5731,7 @@ button.toggleSettings,
 		opacity: 1;
 	}
 	100% {
-		opacity: 0
+		opacity: 0;
 	}
 }
 

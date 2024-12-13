@@ -14,7 +14,14 @@ async function main() {
 		ele.className = ele.className.replace('la-chevron-down', 'la-chevron-up')
 		document.querySelectorAll("#mainmenu > .hide").forEach(k => {
 			k.classList.remove('hide');
-			k.classList.add('column', 'show');
+			// k.classList.add('column', 'show');
+			k.classList.add('column', 'fadein');
+		});
+	}
+	else
+	{
+		document.querySelectorAll("#mainmenu > .hide").forEach(k => {
+			k.classList.add('fadeout');
 		});
 	}
 
@@ -85,7 +92,7 @@ async function main() {
 				getById("chatBody").innerHTML = "";
 			} catch (e) { }
 		} else if (session.label === false) {
-			document.title = location.hostname;
+			// document.title = location.hostname;
 		}
 		try {
 			if (ln_template === false) {
